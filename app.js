@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express();
-    app.port = process.argv[0];
+    app.port = process.argv[2];
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -34,6 +34,8 @@ var routes = {
 mongoose.connect('mongodb://localhost/xpense');
 
 app.listen(app.port);
+
+console.log('listening on port ', app.port)
 
 app.use('/api/expenses', routes.expenses);
 app.use('/api/login', routes.login);
