@@ -9,4 +9,16 @@ router.get('/', function(req, res) {
   });
 });
 
+router.post('/register', function(req, res) {
+  var newUser = new User(req.body);
+
+  newUser.save(function(err) {
+    if(err) {
+      return console.error(err);
+    } else {
+      res.send(200, {});
+    }
+  });
+});
+
 module.exports = router;

@@ -40,3 +40,4 @@ console.log('listening on port ', app.port)
 app.use('/api/expenses', routes.expenses);
 app.use('/api/login', routes.login);
 app.use('/api/user', routes.user);
+app.use('/api/user/register', routes.user);
