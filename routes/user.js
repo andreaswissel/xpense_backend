@@ -12,6 +12,8 @@ router.get('/', function(req, res) {
 router.post('/register', function(req, res) {
   var newUser = new User(req.body);
 
+  console.log(req.body)
+
   newUser.save(function(err) {
     if(err) {
       return console.error(err);

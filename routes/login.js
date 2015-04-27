@@ -8,6 +8,7 @@ router.post('/', function(req, res) {
     if(docs.password == req.body.pass) {
       res.send(200, {});
     } else {
+      console.log('pass not matching')
       res.send(401, {});
     }
   });
